@@ -1,9 +1,9 @@
 import 'dart:io';
 
 void main() {
- List<List<int>> matrix1 = List<List<int>>.generate(3, (i) => List<int>.generate(3, (j) => 0));
- List<List<int>> matrix2 = List<List<int>>.generate(3, (i) => List<int>.generate(3, (j) => 0));
- List<List<int>> result = List<List<int>>.generate(3, (i) => List<int>.generate(3, (j) => 0));
+ List matrix1 = List.generate(3, (i) => List.generate(3, (j) => 0));
+ List matrix2 = List.generate(3, (i) => List.generate(3, (j) => 0));
+ List result = List.generate(3, (i) => List.generate(3, (j) => 0));
 
   stdout.write("Enter Array Size:");
   int length= int.parse(stdin.readLineSync()!);
@@ -31,6 +31,9 @@ void main() {
 
  stdout.write("The Sum Of Matrix Are:\n");
  for (int i = 0; i < 3; i++) {
-    print(result[i].join(' '));
+   for (int j = 0; j < 3; j++){
+    print(result[i][j]);
+   }
+  print("\n");
  }
 }
