@@ -19,28 +19,53 @@ void main()
 
  switch (operation) {
     case 1:
-      for (int i = 0; i < 3; i++) 
-      {
-       for (int j = 0; j < 3; j++)
-        {
-           List<int> row = [];
-           for (int j = 0; j < 3; j++) 
-          {
-             int num = int.parse(stdin.readLineSync()!);
-             row.add(num);
-             sumOfAllElements += num;
-          }
-          array.add(row);
-        }
-      }
-      print('Sum of all elements: $sumOfAllElements');
+            stdout.write('Enter the length of the array: ');
+            String input = stdin.readLineSync()!;
+             int len = int.parse(input);
+
+             List<int> arr = [];
+
+                for (int i = 0; i < len; i++) {
+                 stdout.write('Enter element ${i + 1}: ');
+                 input = stdin.readLineSync()!;
+                 arr.add(int.parse(input));
+                  }
+
+                 int sum = 0;
+
+              for (int i = 0; i < arr.length; i++) {
+              sum += arr[i];
+               }
+
+              print("Sum of all elements in array: $sum");
+              
       break;
     case 2:
-        print('Enter the row number:');
-        int rowNumber = int.parse(stdin.readLineSync()!);
-        int sumOfRow = array[rowNumber - 1].reduce((a, b) => a + b);
-        print('Sum of row $rowNumber: $sumOfRow');
-      
+print('Enter the size of array:');
+ int n = int.parse(stdin.readLineSync()!);
+
+ print('Enter the array elements:');
+ List<int> arr = [];
+ for (int i = 0; i < n; i++) {
+    arr.add(int.parse(stdin.readLineSync()!));
+ }
+
+ print('Enter the row number:');
+ int k = int.parse(stdin.readLineSync()!);
+
+ int sum = 0;
+
+ if (k < 1) {
+    print('Row number should be greater than or equal to 1');
+ } else {
+    for (int i = 0; i < n; i++) {
+      if (i % k == 0) {
+        sum += arr[i];
+      }
+    }
+
+    print('The sum of elements of row number $k is: $sum');
+ }
       break;
     case 3:
         print("Enter the column number:");
