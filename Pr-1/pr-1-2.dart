@@ -5,24 +5,24 @@ void main()
   List<int>array=[];
 
   stdout.write("Enter Array Size:");
-  int length= int.parse(stdin.readLineSync()!);
+  int len= int.parse(stdin.readLineSync()!);
 
   
-  for(int i=0; i<length; i++)
+  for(int i=0; i<len; i++)
   {
     stdout.write("Enter Array Elements: ");
     array.add(int.parse(stdin.readLineSync()!));
   }
 
-   var largest=array[0];
-  for(int i=0; i<length; i++)
+   var Max=array[0];
+  for(int i=0; i<len; i++)
   {
-    if(largest < array[i])
+    if(Max < array[i])
     {
-      largest = array[i];
+      Max = array[i];
     }
   }
-  print("Largest Elements in Array Are:$largest");
+  print("Largest Elements in Array Are:$Max");
 
 
 }
